@@ -1,3 +1,5 @@
+CREATE OR ALTER PROCEDURE bronze.load_bronze AS
+BEGIN
 ----------------------
 --BRONZE.CRM_CUST_INFO
 ----------------------
@@ -10,9 +12,6 @@ WITH (
 	FIELDTERMINATOR = ',',
 	TABLOCK 
 );
-
-SELECT COUNT(*)
-FROM bronze.crm_cust_info;
 
 ---------------------
 --BRONZE.CRM_PRD_INFO
@@ -27,9 +26,6 @@ WITH (
 	TABLOCK 
 );
 
-SELECT COUNT(*)
-FROM bronze.crm_prd_info;
-
 --------------------------
 --BRONZE.CRM_SALES_DETAILS
 --------------------------
@@ -42,9 +38,6 @@ WITH (
 	FIELDTERMINATOR = ',',
 	TABLOCK 
 );
-
-SELECT COUNT(*)
-FROM bronze.crm_sales_details;
 
 --------------------------
 --BRONZE.ERP_CUST_AZ12
@@ -59,10 +52,6 @@ WITH (
 	TABLOCK 
 );
 
-SELECT COUNT(*)
-FROM bronze.erp_cust_az12;
-
-
 --------------------------
 --BRONZE.ERP_LOC_A101
 --------------------------
@@ -75,11 +64,6 @@ WITH (
 	FIELDTERMINATOR = ',',
 	TABLOCK 
 );
-
-SELECT COUNT(*)
-FROM bronze.erp_loc_a101;
-
-
 
 --------------------------
 --BRONZE.ERP_PX_CAT_G1V2
@@ -94,5 +78,4 @@ WITH (
 	TABLOCK 
 );
 
-SELECT COUNT(*)
-FROM bronze.erp_px_cat_g1v2;
+END
